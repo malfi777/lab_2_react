@@ -4,77 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме - Максим Мельничук</title>
+    
+    <!-- 1. EXTERNAL CSS (Зовнішній файл) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- 2. INTERNAL CSS (Внутрішні стилі) -->
+    <style>
+        .internal-note {
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Максим Мельничук</h1>
-        <h2>Junior Cybersecurity Analyst</h2>
-        <p>
-            Email: <a href="mailto:maksym.melnychuk.kb.2025@lpnu.ua">maksym.melnychuk.kb.2025@lpnu.ua</a><br>
-            Телефон: <a href="tel:+380986000837">+380 98 600 08 37</a><br>
-            Локація: вул. Величковського 49, Львів, Україна
-        </p>
-    </header>
+    <div class="cv-container">
+        <!-- Використання ID та 3. INLINE CSS -->
+        <header id="main-header">
+            <h1 style="letter-spacing: -0.5px;">Максим Мельничук</h1>
+            <h2>Junior Cybersecurity Analyst</h2>
+            <p>
+                Email: <a href="mailto:maksym.melnychuk.kb.2025@lpnu.ua">maksym.melnychuk.kb.2025@lpnu.ua</a><br>
+                Телефон: <a href="tel:+380986000837">+380 98 600 08 37</a><br>
+                Локація: вул. Величковського 49, Львів, Україна
+            </p>
+        </header>
 
-    <main>
-        <section>
-            <h3>Про мене</h3>
-            <p>Я відкрита та товариська людина. Дуже захоплююсь математикою та люблю точні науки. Люблю подорожувати і хотів би дізнатися про інші культури. Завжди долаю будь-які труднощі і не боюся виходити із зони комфорту.</p>
-        </section>
+        <main>
+            <!-- Про мене -->
+            <section class="section-block">
+                <h3 class="section-title">Про мене</h3>
+                <p>Я відкрита та товариська людина. Дуже захоплююсь математикою та люблю точні науки. Люблю подорожувати і хотів би дізнатися про інші культури. Завжди долаю будь-які труднощі і не боюся виходити із зони комфорту.</p>
+            </section>
 
-        <section>
-            <h3>Досвід роботи</h3>
-            <ul>
-                <li>
-                    <h4>Репетитор з математики</h4>
-                    <p><em>Фріланс / Самозайнятість (2024 - 2025)</em></p>
+            <!-- Досвід роботи -->
+            <section class="section-block">
+                <h3 class="section-title">Досвід роботи</h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #f8fafc; font-size: 16px; font-weight: 600;">Репетитор з математики</h4>
+                    <p style="font-size: 13px; color: #38bdf8; font-weight: 500; margin-bottom: 6px;">Фріланс / Самозайнятість (2024 - 2025)</p>
                     <p>Розробляв індивідуальні плани навчання для дітей, щоб покращити їхні математичні навички та логічне мислення. Пояснював складні математичні концепції простими словами, адаптуючи методи викладання до темпу та стилю навчання кожного учня.</p>
-                </li>
-                <li>
-                    <h4>Промоутер бренду</h4>
-                    <p><em>Фріланс (Липень 2024)</em></p>
+                </div>
+
+                <div>
+                    <h4 style="color: #f8fafc; font-size: 16px; font-weight: 600;">Промоутер бренду</h4>
+                    <p style="font-size: 13px; color: #38bdf8; font-weight: 500; margin-bottom: 6px;">Фріланс (Липень 2024)</p>
                     <p>Активно спілкувався з потенційними клієнтами в місцях з великим скупченням людей для підвищення впізнаваності бренду та розповсюдження рекламних матеріалів. Розвинув сильні комунікативні навички та адаптивність, ініціюючи розмови та відповідаючи на запитання на місці.</p>
-                </li>
-            </ul>
-        </section>
+                </div>
+            </section>
 
-        <section>
-            <h3>Освіта</h3>
-            <ul>
-                <li>
-                    <h4>Національний університет «Львівська політехніка»</h4>
+            <!-- Освіта -->
+            <section class="section-block">
+                <h3 class="section-title">Освіта</h3>
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: #f8fafc; font-size: 16px; font-weight: 600;">Національний університет «Львівська політехніка»</h4>
                     <p>Бакалавр з кібербезпеки (2025 - дотепер, очікуваний рік випуску: 2029)</p>
-                </li>
-                <li>
-                    <h4>Львівська академічна гімназія</h4>
+                </div>
+                <div>
+                    <h4 style="color: #f8fafc; font-size: 16px; font-weight: 600;">Львівська академічна гімназія</h4>
                     <p>Атестат про середню освіту, спеціалізація: Прикладна математика (2018 - 2025)</p>
-                </li>
-            </ul>
-        </section>
+                </div>
+            </section>
 
-        <section>
-            <h3>Навички</h3>
-            <ul>
-                <li>Критичне мислення</li>
-                <li>Комунікативні навички</li>
-                <li>Лідерство</li>
-                <li>Дискретна математика</li>
-                <li>Аналітичне мислення</li>
-                <li>Логічне мислення</li>
-            </ul>
-        </section>
+            <!-- Навички (Flexbox макет) -->
+            <section class="section-block">
+                <h3 class="section-title">Навички</h3>
+                <ul class="skills-list">
+                    <li class="skill-tag">Критичне мислення</li>
+                    <li class="skill-tag">Комунікативні навички</li>
+                    <li class="skill-tag">Лідерство</li>
+                    <li class="skill-tag">Дискретна математика</li>
+                    <li class="skill-tag">Аналітичне мислення</li>
+                    <li class="skill-tag">Логічне мислення</li>
+                </ul>
+            </section>
 
-        <section>
-            <h3>Мови</h3>
-            <ul>
-                <li>Англійська — B1</li>
-                <li>Українська — Рідна</li>
-            </ul>
-        </section>
-    </main>
+            <!-- Мови -->
+            <section class="section-block">
+                <h3 class="section-title">Мови</h3>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 6px;"><strong>Англійська:</strong> B1</li>
+                    <li><strong>Українська:</strong> Рідна</li>
+                </ul>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2026 Максим Мельничук. Резюме створено для лабораторної роботи №2.</p>
-    </footer>
+        <footer>
+            <p class="internal-note">&copy; 2026 Максим Мельничук. Резюме створено для лабораторної роботи.</p>
+        </footer>
+    </div>
 </body>
 </html>
