@@ -1,7 +1,5 @@
-/* ==========================================
-   1. БЛОКОВА МОДЕЛЬ ТА БАЗОВІ СТИЛІ
-   Селектор тегу (*) та (body)
-   ========================================== */
+/*1. БЛОКОВА МОДЕЛЬ ТА БАЗОВІ СТИЛІ
+   Селектор тегу (*) та (body) */
 * {
     box-sizing: border-box; /* Явне керування блоковою моделлю */
     margin: 0;
@@ -16,10 +14,8 @@ body {
     padding: 40px 20px;
 }
 
-/* ==========================================
-   2. СЕЛЕКТОР КЛАСУ (.cv-container)
-   Керування margin, padding, border, box-shadow
-   ========================================== */
+/* 2. СЕЛЕКТОР КЛАСУ (.cv-container)
+   Керування margin, padding, border, box-shadow*/
 .cv-container {
     max-width: 800px;
     margin: 0 auto;
@@ -30,9 +26,8 @@ body {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
 }
 
-/* ==========================================
-   3. СЕЛЕКТОР ID (#main-header)
-   ========================================== */
+/* 3. СЕЛЕКТОР ID (#main-header)
+ */
 #main-header {
     text-align: center;
     border-bottom: 1px solid #1f2937;
@@ -57,9 +52,8 @@ body {
     letter-spacing: 1.5px;
 }
 
-/* ==========================================
-   4. СЕЛЕКТОР АТРИБУТІВ [href^="mailto:"]
-   ========================================== */
+/* 4. СЕЛЕКТОР АТРИБУТІВ [href^="mailto:"]
+ */
 a[href^="mailto:"], a[href^="tel:"] {
     color: #38bdf8;
     text-decoration: none;
@@ -67,9 +61,8 @@ a[href^="mailto:"], a[href^="tel:"] {
     transition: color 0.2s ease;
 }
 
-/* ==========================================
-   5. ПСЕВДОКЛАСИ (:hover та :active)
-   ========================================== */
+/*
+   5. ПСЕВДОКЛАСИ (:hover та :active) */
 a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
     color: #818cf8;
     text-decoration: underline;
@@ -86,9 +79,8 @@ a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
     transform: scale(0.97);
 }
 
-/* ==========================================
-   6. МАКЕТ СТОРІНКИ НА FLEXBOX
-   ========================================== */
+/* 6. МАКЕТ СТОРІНКИ НА FLEXBOX
+*/
 .section-block {
     margin-bottom: 30px;
 }
@@ -123,9 +115,8 @@ a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
     transition: all 0.2s ease;
 }
 
-/* ==========================================
-   7. МЕДІАЗАПИТ (Адаптивність)
-   ========================================== */
+/*7. МЕДІАЗАПИТ (Адаптивність)
+*/
 @media (max-width: 768px) {
     body {
         padding: 15px 10px;
