@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const VARIANT = 1; // Замініть за потреби на ваш номер за журналом
+const VARIANT = 17; 
 const REVIEWS_URL = `https://jsonplaceholder.typicode.com/posts/${VARIANT}/comments`;
 
 function Reviews() {
