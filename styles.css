@@ -1,173 +1,159 @@
-/* 1. БЛОКОВА МОДЕЛЬ ТА БАЗОВІ СТИЛІ
-   Селектор тегу (*) та (body) */
-* {
-    box-sizing: border-box; /* Явне керування блоковою моделлю */
-    margin: 0;
-    padding: 0;
+/* ==========================================
+   СТИЛІ ДЛЯ ЧАСТИНИ 1 (Vanilla JS)
+   ========================================== */
+
+/* Перемикання тем через data-theme на <html> */
+:root[data-theme="light"] {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --border-color: #e9ecef;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --border-color: #333333;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0b0f19;
-    color: #94a3b8;
-    line-height: 1.7;
-    padding: 40px 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 2. СЕЛЕКТОР КЛАСУ (.cv-container)
-   Керування margin, padding, border, box-shadow та загальний макет на Flexbox */
-.cv-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #111827;
-    border: 1px solid #1f2937;
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
-    
-    /* Макет сторінки на Flexbox */
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.header-container, .main-container, .footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* 3. СЕЛЕКТОР ID (#main-header) */
-#main-header {
-    text-align: center;
-    border-bottom: 1px solid #1f2937;
-    padding-bottom: 30px;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
-#main-header h1 {
-    font-size: 32px;
-    font-weight: 800;
-    color: #f8fafc;
-    margin-bottom: 8px;
+.theme-btn {
+  background-color: #646cff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-#main-header h2 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #38bdf8;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+/* Секція відгуків */
+.reviews-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* 4. СЕЛЕКТОР АТРИБУТІВ [href^="mailto:"] */
-a[href^="mailto:"], a[href^="tel:"] {
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+.review-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* 5. ПСЕВДОКЛАСИ (:hover та :active) */
-a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
-    color: #818cf8;
-    text-decoration: underline;
+.review-card strong {
+  color: #646cff;
 }
 
-.skill-tag:hover {
-    background-color: #1e293b;
-    border-color: #38bdf8;
-    color: #f8fafc;
-    transform: translateY(-2px);
+.review-card a {
+  font-size: 0.85rem;
+  color: #888;
+  text-decoration: none;
 }
 
-.skill-tag:active {
-    transform: scale(0.97);
+/* Футер та системна інформація */
+.sysinfo-list {
+  display: grid;
+  grid-template-cols: auto 1fr;
+  gap: 6px 16px;
+  font-size: 0.9rem;
 }
 
-/* 6. СТРУКТУРА КОНТЕНТУ (Flexbox макет) */
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.sysinfo-list dt {
+  font-weight: bold;
+  opacity: 0.8;
 }
 
-.section-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 12px;
-    border-left: 3px solid #38bdf8;
-    padding-left: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.sysinfo-list dd {
+  margin: 0;
+  word-break: break-all;
 }
 
-/* Стилі для елементів досвіду та освіти (замість inline-стилів) */
-.info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-.info-item:not(:last-child) {
-    margin-bottom: 20px;
+/* Нативне модальне вікно <dialog> */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
 }
 
-.item-title {
-    color: #f8fafc;
-    font-size: 16px;
-    font-weight: 600;
+dialog.feedback-dialog {
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.item-subtitle {
-    font-size: 13px;
-    color: #38bdf8;
-    font-weight: 500;
+.feedback-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Навички та Мови (Flexbox макети) */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    margin-top: 12px;
+.feedback-head button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: inherit;
+  cursor: pointer;
 }
 
-.skill-tag {
-    background-color: #0f172a;
-    border: 1px solid #1e293b;
-    color: #cbd5e1;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    cursor: pointer;
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
 }
 
-.languages-list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
 }
 
-/* 7. МЕДІАЗАПИТ (Адаптивність) */
-@media (max-width: 768px) {
-    body {
-        padding: 15px 10px;
-    }
-    
-    .cv-container {
-        padding: 20px;
-        border-radius: 12px;
-        gap: 20px;
-    }
-    
-    #main-header h1 {
-        font-size: 26px;
-    }
-    
-    main {
-        gap: 20px;
-    }
-    
-    .skills-list {
-        flex-direction: column;
-    }
+.field-input {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+}
+
+.submit-btn {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
 }
